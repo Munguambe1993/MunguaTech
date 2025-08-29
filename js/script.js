@@ -1,4 +1,3 @@
-// ====== Gestão de Condomínio - JS ======
 document.addEventListener("DOMContentLoaded", () => {
   // ------- LOGIN -------
   const loginForm = document.getElementById("loginForm");
