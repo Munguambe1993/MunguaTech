@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestão de Pagamentos</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>Condomínio</h2>
+      <ul>
+        <li><a href="dashboard.html">🏠 Início</a></li>
+        <li><a href="moradores.html">👨‍👩‍👧 Moradores</a></li>
+        <li><a href="despesas.html">💰 Despesas</a></li>
+        <li><a href="pagamentos.html">📑 Pagamentos</a></li>
+        <li><a href="contactos.html">📍 Contactos</a></li>
+        <li><a href="index.html">🚪 Sair</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h1>Gestão de Pagamentos</h1>
+
+      <form id="pagamentoForm" class="form-grid">
+        <input type="text" id="moradorPagamento" placeholder="Nome do morador" required>
+        <input type="number" id="valorPagamento" placeholder="Valor (MZN)" required>
+        <input type="date" id="dataPagamento" required>
+
+        <select id="metodoPagamento" required>
+          <option value="">-- Método de pagamento --</option>
+          <option value="M-Pesa">M-Pesa (Vodacom)</option>
+          <option value="mKesh">mKesh (Movitel)</option>
+          <option value="e-Mola">e-Mola (TMcel)</option>
+          <option value="Cartão">Cartão Bancário</option>
+          <option value="Transferência">Transferência Bancária</option>
+        </select>
+
+        <div id="campoExtra"></div>
+
+        <button type="submit">Registar Pagamento</button>
+      </form>
+
+      <h2>Histórico de Pagamentos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Morador</th>
+            <th>Valor</th>
+            <th>Data</th>
+            <th>Método</th>
+            <th>Referência</th>
+          </tr>
+        </thead>
+        <tbody id="pagamentoList"></tbody>
+      </table>
+
+      <img src="images/pagamentos.svg" alt="Pagamentos" class="decorativa">
+    </main>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestão de Moradores</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>Condomínio</h2>
+      <ul>
+        <li><a href="dashboard.html">🏠 Início</a></li>
+        <li><a href="moradores.html">👨‍👩‍👧 Moradores</a></li>
+        <li><a href="despesas.html">💰 Despesas</a></li>
+        <li><a href="pagamentos.html">📑 Pagamentos</a></li>
+        <li><a href="contactos.html">📍 Contactos</a></li>
+        <li><a href="index.html">🚪 Sair</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h1>Gestão de Moradores</h1>
+
+      <form id="moradorForm" class="form-grid">
+        <input type="text" id="nome" placeholder="Nome do morador" required>
+        <input type="text" id="bloco" placeholder="Bloco" required>
+        <input type="text" id="apartamento" placeholder="Apartamento" required>
+        <input type="text" id="contato" placeholder="Contato" required>
+        <button type="submit">Adicionar</button>
+      </form>
+
+      <h2>Lista de Moradores</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Bloco</th>
+            <th>Apartamento</th>
+            <th>Contato</th>
+            <th>Situação Financeira</th>
+          </tr>
+        </thead>
+        <tbody id="moradorList"></tbody>
+      </table>
+
+      <img src="images/moradores.svg" alt="Moradores" class="decorativa">
+    </main>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
