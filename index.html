@@ -2,250 +2,211 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>Mungua's Moradia</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Condomínio Munguá</title>
   <style>
-    :root {
-      --bg: #eaf0f6;
-      --card: #ffffff;
-      --accent: #2c3e50;
-      --text: #333333;
-      --muted: #666666;
-      --shadow: rgba(0, 0, 0, 0.1);
-    }
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: var(--bg);
-      color: var(--text);
+      background: linear-gradient(to right, #eef2f3, #dfe9f3);
+      color: #333;
     }
+
+    /* Cabeçalho */
     header {
-      background: var(--accent);
+      background: rgba(44, 62, 80, 0.95);
       color: white;
-      padding: 30px;
+      padding: 20px 0;
       text-align: center;
-      box-shadow: 0 4px 6px var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
-    main {
-      padding: 30px;
-      max-width: 1100px;
+
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+      animation: brilho 2s infinite alternate;
+    }
+
+    @keyframes brilho {
+      from { color: #fff; text-shadow: 0 0 10px #fff, 0 0 20px #ffdd57; }
+      to { color: #ffdd57; text-shadow: 0 0 20px #ffdd57, 0 0 40px #fff; }
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffdd57;
+    }
+
+    /* Sessões */
+    section {
+      padding: 40px 20px;
+      max-width: 1200px;
       margin: auto;
     }
-    h1, h2 {
-      margin-bottom: 10px;
-    }
-    h2 {
-      color: var(--accent);
-    }
-    p, ul {
-      font-size: 18px;
-      line-height: 1.6;
-    }
-    .info-box {
-      background: var(--card);
-      padding: 20px;
-      margin-bottom: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px var(--shadow);
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 15px;
-    }
-    .gallery img {
-      width: 48%;
-      border-radius: 8px;
-      box-shadow: 0 0 10px var(--shadow);
-      cursor: pointer;
-    }
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 8px;
-      margin-top: 15px;
-    }
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      background: var(--accent);
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-    .btn:hover {
-      background: #1a2a3f;
-    }
-    footer {
-      background: var(--accent);
-      color: white;
+
+    section h2 {
       text-align: center;
-      padding: 15px;
-      margin-top: 50px;
+      margin-bottom: 20px;
+      font-size: 2em;
+      color: #2c3e50;
     }
 
     /* Slider */
     .slider {
       position: relative;
       max-width: 100%;
+      margin: 20px auto;
       overflow: hidden;
       border-radius: 10px;
-      box-shadow: 0 0 15px var(--shadow);
-      margin-top: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
+
     .slides {
       display: flex;
-      transition: transform 0.5s ease-in-out;
+      width: 600%;
+      animation: slide 20s infinite;
     }
+
     .slides img {
       width: 100%;
-      flex-shrink: 0;
       border-radius: 10px;
     }
-    .slider button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(44, 62, 80, 0.7);
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      font-size: 24px;
-      border-radius: 50%;
+
+    @keyframes slide {
+      0% { transform: translateX(0%); }
+      20% { transform: translateX(-100%); }
+      40% { transform: translateX(-200%); }
+      60% { transform: translateX(-300%); }
+      80% { transform: translateX(-400%); }
+      100% { transform: translateX(-500%); }
     }
-    .slider .prev { left: 10px; }
-    .slider .next { right: 10px; }
+
+    /* Galeria */
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .galeria img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Contatos */
+    .contatos {
+      text-align: center;
+    }
+
+    .contatos a {
+      display: inline-block;
+      margin: 10px;
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Mungua's Moradia</h1>
-    <p>Condomínio residencial moderno e seguro na zona da Mozal</p>
+    <h1>Bem-vindo ao Condomínio Munguá</h1>
+    <nav>
+      <a href="#quem-somos">Quem Somos</a>
+      <a href="#oque-fazemos">O Que Fazemos</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#endereco">Endereço</a>
+      <a href="#contatos">Contactos</a>
+    </nav>
   </header>
 
-  <main>
-    <div class="info-box">
-      <h2>📍 Localização</h2>
-      <p>Zona da Mozal, Bairro Beluluane, Boane, Maputo</p>
-      <iframe src="https://www.google.com/maps?q=Mozal,+Maputo,+Moçambique&output=embed"></iframe>
-    </div>
+  <section id="quem-somos">
+    <h2>Quem Somos</h2>
+    <p>Somos o Condomínio Munguá, um espaço residencial moderno, seguro e bem estruturado, localizado na região da Mozal. Nosso compromisso é oferecer conforto, qualidade de vida e uma administração eficiente para todos os nossos moradores. Trabalhamos para proporcionar um ambiente acolhedor e organizado, promovendo o bem-estar e a convivência harmoniosa entre os vizinhos.</p>
+    <p>Nosso condomínio é referência em infraestrutura, segurança e serviços, trazendo uma experiência única para quem busca morar com tranquilidade e praticidade.</p>
+  </section>
 
-    <div class="info-box">
-      <h2>🔐 Segurança e Portaria</h2>
-      <p>Portão automático com controle de acesso, câmeras de vigilância e sinalização de segurança.</p>
-      <div class="slider">
-        <div class="slides">
-          <img src="images/portao.png" alt="Portão com segurança">
-          <img src="images/portao2.png" alt="Entrada com controle de acesso">
-          <img src="images/portao3.png" alt="Portaria com sinalização de segurança">
-        </div>
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
+  <section id="oque-fazemos">
+    <h2>O Que Fazemos</h2>
+    <p>1. Administramos todas as áreas comuns do condomínio com eficiência, garantindo organização e bem-estar.</p>
+    <p>2. Implementamos um sistema de gestão moderna que permite acompanhar despesas, pagamentos e serviços com transparência.</p>
+    <p>3. Garantimos a segurança 24 horas por dia, com portaria equipada e monitoramento constante.</p>
+    <p>4. Mantemos áreas verdes e de lazer para promover uma vida saudável e equilibrada.</p>
+    <p>5. Realizamos manutenções periódicas para manter todas as estruturas em perfeito estado.</p>
+    <p>6. Organizamos eventos e atividades para fortalecer a convivência e o senso de comunidade.</p>
+    <p>7. Oferecemos suporte rápido para qualquer necessidade dos moradores, garantindo praticidade.</p>
+    <p>8. Desenvolvemos projetos sustentáveis, visando economia e preservação ambiental.</p>
+    <p>9. Facilitamos a comunicação entre síndico, administração e moradores com tecnologia.</p>
+    <p>10. Trabalhamos para oferecer sempre um serviço de alta qualidade, focado na satisfação dos residentes.</p>
+  </section>
+
+  <section id="galeria">
+    <h2>Galeria</h2>
+    <div class="slider">
+      <div class="slides">
+        <img src="images/bloco.png" alt="Bloco A">
+        <img src="images/apartamento.png" alt="Apartamento T1">
+        <img src="images/salao.png" alt="Salão de Festas">
+        <img src="images/parque.png" alt="Parque Infantil">
+        <img src="images/estacionamento.png" alt="Estacionamento">
+        <img src="images/portaria.png" alt="Portaria">
       </div>
     </div>
-
-    <div class="info-box">
-      <h2>🏢 Estrutura do Condomínio</h2>
-      <p>Confira abaixo as imagens que representam a estrutura do condomínio:</p>
-      <div class="slider">
-        <div class="slides">
-          <img src="images/bloco.png" alt="Blocos residenciais com 3 andares">
-          <img src="images/apartamento.png" alt="48 apartamentos modernos">
-          <img src="images/salao.png" alt="Salão de festas equipado">
-          <img src="images/parque.png" alt="Parque infantil">
-          <img src="images/estacionamento.png" alt="Estacionamento interno">
-          <img src="images/portaria.png" alt="CCTV com segurança 24h">
-        </div>
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
-      </div>
+    <div class="galeria">
+      <img src="images/bloco.png" alt="Bloco">
+      <img src="images/apartamento.png" alt="Apartamento">
+      <img src="images/salao.png" alt="Salão">
+      <img src="images/parque.png" alt="Parque">
     </div>
+  </section>
 
-    <div class="info-box">
-      <h2>🖼️ Galeria de Imagens</h2>
-      <div class="gallery">
-        <a href="images/fachada.png" target="_blank"><img src="images/fachada.png" alt="Fachada do condomínio"></a>
-        <a href="images/sala.png" target="_blank"><img src="images/sala.png" alt="Sala de estar"></a>
-        <a href="images/cozinha.png" target="_blank"><img src="images/cozinha.png" alt="Cozinha equipada"></a>
-        <a href="images/quarto.png" target="_blank"><img src="images/quarto.png" alt="Quarto de casal"></a>
-        <a href="images/banheiro.png" target="_blank"><img src="images/banheiro.png" alt="Banheiro moderno"></a>
-        <a href="images/jardim.png" target="_blank"><img src="images/jardim.png" alt="Área verde e jardim"></a>
-      </div>
-    </div>
+  <section id="endereco">
+    <h2>Endereço</h2>
+    <p>Estamos localizados na Rua da Mozal, próximo ao complexo industrial Mozal, Maputo - Moçambique.</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22583.20464644688!2d32.519821!3d-25.947532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee8f8e6e3a3a3d3%3A0x23b4c4ef79b9a48a!2sMozal!5e0!3m2!1spt-PT!2smz!4v1689774567890!5m2!1spt-PT!2smz" 
+      width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
 
-    <div class="info-box">
-      <h2>📞 Contato da Administração</h2>
-      <p>Gestor: Sr. Martinho Munguambe</p>
-      <p>Telefone: <a href="tel:+258841234567">+258 84 123 4567</a></p>
-      <p>Email: <a href="mailto:munguas.moradia@gmail.com">munguas.moradia@gmail.com</a></p>
-      <p>WhatsApp: <a href="https://wa.me/258841234567" target="_blank">Conversar no WhatsApp</a></p>
-    </div>
-
-    <div class="info-box">
-      <h2>🌐 Redes Sociais</h2>
-      <ul>
-        <li><a href="https://facebook.com/munguasmoradia" target="_blank">Facebook: /munguasmoradia</a></li>
-        <li><a href="https://instagram.com/munguasmoradia" target="_blank">Instagram: @munguasmoradia</a></li>
-      </ul>
-    </div>
-
-    <div class="info-box" style="text-align: center;">
-      <h2>🔐 Área do Gestor</h2>
-      <p>Para acessar dados internos como moradores, despesas e pagamentos:</p>
-      <a href="gestao.html" class="btn">Entrar como Gestor</a>
-    </div>
-  </main>
+  <section id="contatos" class="contatos">
+    <h2>Contactos</h2>
+    <p>📞 Telefone: +258 84 123 4567</p>
+    <p>📧 Email: contato@mungua.condominio.mz</p>
+    <a href="https://wa.me/258872351863" target="_blank">💬 WhatsApp</a>
+    <a href="https://facebook.com" target="_blank">📘 Facebook</a>
+    <a href="https://instagram.com" target="_blank">📸 Instagram</a>
+    <a href="https://twitter.com" target="_blank">🐦 Twitter</a>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Munguá's Moradia. Todos os direitos reservados.</p>
+    <p>&copy; 2025 Condomínio Munguá - Todos os direitos reservados.</p>
   </footer>
-
-  <!-- Script para ativar múltiplos sliders -->
-  <script>
-    document.querySelectorAll('.slider').forEach(slider => {
-      const slides = slider.querySelector('.slides');
-      const images = slider.querySelectorAll('.slides img');
-      const prev = slider.querySelector('.prev');
-      const next = slider.querySelector('.next');
-      let currentIndex = 0;
-
-      function showSlide(index) {
-        const slideWidth = images[0].clientWidth;
-        slides.style.transform = `translateX(-${index * slideWidth}px)`;
-      }
-
-      next.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        showSlide(currentIndex);
-      });
-
-      prev.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showSlide(currentIndex);
-      });
-
-      window.addEventListener('load', () => {
-        showSlide(currentIndex);
-      });
-
-      window.addEventListener('resize', () => {
-        showSlide(currentIndex);
-      });
-    });
-  </script>
 </body>
 </html>
