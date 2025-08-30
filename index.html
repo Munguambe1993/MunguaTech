@@ -2,22 +2,66 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>Login - Gestão de Condomínio</title>
+  <title>Condomínio - Página Inicial</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background: #2980b9;
+    }
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      padding: 10px;
+      background: #2c3e50;
+      color: white;
+    }
+  </style>
 </head>
-<body class="login-page">
-  <div class="login-container">
-    <img src="images/logo.png" alt="Logo Condomínio" class="logo">
-    <h1>Gestão de Condomínio</h1>
-    <p>Bem-vindo! 
-      Faça login para continuar.</p>
-    <form id="loginForm">
-      <input type="text" id="user" placeholder="Usuário" required>
-      <input type="password" id="pass" placeholder="Senha" required>
-      <button type="submit">Entrar</button>
-      <p id="errorMsg" class="error"></p>
-    </form>
-  </div>
-  <script src="js/script.js"></script>
+<body>
+  <header>
+    <h1>Bem-vindo ao Condomínio</h1>
+  </header>
+
+  <main>
+    <p>Informações gerais do condomínio estarão disponíveis aqui.</p>
+    <p>Para acessar dados de moradores, despesas e pagamentos, utilize o botão abaixo.</p>
+    <a href="gestao.html" class="btn">Área do Gestor</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Condomínio. Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>
