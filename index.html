@@ -5,180 +5,142 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Condomínio Munguá</title>
   <style>
-    * {
+    body {
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #f0f4f8, #d9e4f5);
+      background: #f9f9f9;
       color: #333;
-      line-height: 1.6;
     }
+
+    /* Cabeçalho */
     header {
-      background: rgba(44, 62, 80, 0.9);
-      color: #fff;
-      padding: 20px;
+      background: #2c3e50;
+      color: white;
+      padding: 25px;
       text-align: center;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
+
     header h1 {
-      font-size: 2.5rem;
-      color: #f1c40f;
-      animation: brilho 2s infinite alternate;
-      padding: 20px;
+      margin: 0;
+      font-size: 32px;
     }
-    @keyframes brilho {
-      0% { text-shadow: 0 0 5px #f1c40f, 0 0 10px #f39c12; }
-      100% { text-shadow: 0 0 20px #f1c40f, 0 0 30px #e67e22; }
+
+    header p {
+      margin: 5px 0 0;
     }
+
+    /* Menu de navegação */
     nav {
-      background: #34495e;
+      background: white;
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 40px;
       padding: 15px 0;
+      position: sticky;
+      top: 70px;
+      z-index: 999;
+      border-bottom: 1px solid #ddd;
     }
+
     nav a {
-      color: white;
+      color: #444;
       text-decoration: none;
-      font-weight: bold;
+      font-size: 16px;
+      font-weight: 500;
       transition: color 0.3s;
     }
+
     nav a:hover {
       color: #f1c40f;
     }
+
+    /* Seções */
     section {
-      padding: 40px 20px;
-      max-width: 1200px;
+      padding: 60px 20px;
+      max-width: 1000px;
       margin: auto;
     }
-    h2 {
+
+    section h2 {
       text-align: center;
-      color: #2c3e50;
       margin-bottom: 20px;
+      color: #2c3e50;
     }
-    /* Slider infinito */
-    .slider {
-      overflow: hidden;
-      width: 50%;
-      margin: 50px auto;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      position: relative;
-    }
-    .slides {
-      display: flex;
-      width: calc(100% * 12); /* duplicado para loop */
-      animation: scroll 50s linear infinite;
-    }
-    .slides img {
-      width: 50%;
-      flex-shrink: 0;
-      border-radius: 10px;
-    }
-    @keyframes scroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-    /* Galeria */
+
+    /* Galeria simples */
     .galeria {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 15px;
-      margin-top: 20px;
     }
+
     .galeria img {
       width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
     }
-    .galeria img:hover {
-      transform: scale(1.05);
-    }
-    /* Contato */
-    .contato {
+
+    /* Contactos */
+    .contactos {
       text-align: center;
     }
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 10px;
-      margin-top: 20px;
+
+    .contactos p {
+      margin: 10px 0;
     }
-    .redes {
-      margin-top: 20px;
-    }
-    .redes a {
+
+    .social a {
       margin: 0 10px;
-      color: #2c3e50;
-      font-size: 24px;
       text-decoration: none;
+      font-size: 18px;
+      color: #2c3e50;
+      transition: color 0.3s;
     }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #2c3e50;
-      color: white;
-      margin-top: 20px;
+
+    .social a:hover {
+      color: #f1c40f;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Bem-vindo ao Munguá's Condomínio</h1>
+  <!-- Cabeçalho -->
+  <header id="inicio">
+    <h1>Condomínio Munguá</h1>
+    <p>Bem-vindo ao nosso espaço residencial</p>
   </header>
+
+  <!-- Menu -->
   <nav>
-    <a href="#quem-somos">Quem Somos</a>
-    <a href="#o-que-fazemos">O Que Fazemos</a>
+    <a href="#inicio">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#projetos">Projetos</a>
     <a href="#galeria">Galeria</a>
-    <a href="#contato">Contato</a>
+    <a href="#equipe">Equipe</a>
+    <a href="#contactos">Contactos</a>
   </nav>
 
-  <section id="quem-somos">
-    <h2>Quem Somos</h2>
-    <p>O Condomínio Munguá é um espaço moderno e seguro, pensado para oferecer conforto, tranquilidade e qualidade de vida aos seus moradores. Nossa missão é proporcionar um ambiente acolhedor com infraestrutura de excelência, zelando pelo bem-estar coletivo e pela valorização do patrimônio.</p>
-    <p>Com uma equipe dedicada e serviços personalizados, estamos sempre prontos para atender às necessidades dos nossos residentes. Nosso compromisso é ser mais do que um simples condomínio; queremos construir uma comunidade unida, onde todos se sintam em casa.</p>
-    <p>Investimos constantemente em segurança, tecnologia e lazer, garantindo que cada família tenha um espaço ideal para viver com qualidade. Além disso, buscamos sempre inovação, trazendo soluções inteligentes para a gestão condominial.</p>
-    <p>Acreditamos na transparência, no diálogo e na convivência harmônica, pilares que fortalecem nossa relação com todos os moradores. Aqui, cada detalhe é pensado para você viver bem.</p>
+  <!-- Seções -->
+  <section id="sobre">
+    <h2>Sobre</h2>
+    <p>O Condomínio Munguá foi desenvolvido para proporcionar conforto, segurança e qualidade de vida aos seus moradores. Contamos com apartamentos modernos, áreas de lazer e serviços exclusivos.</p>
+    <p>Nosso objetivo é criar um ambiente familiar, tranquilo e bem estruturado, perfeito para quem busca morar com comodidade e praticidade.</p>
   </section>
 
-  <section id="o-que-fazemos">
-    <h2>O Que Fazemos</h2>
-    <div class="slider">
-      <div class="slides">
-        <img src="images/bloco.png" alt="Bloco A">
-        <img src="images/apartamento.png" alt="Apartamento T1">
-        <img src="images/salao.png" alt="Salão de festas">
-        <img src="images/parque.png" alt="Parque infantil">
-        <img src="images/estacionamento.png" alt="Estacionamento">
-        <img src="images/portaria.png" alt="Portaria">
-        <!-- duplicado p/ loop infinito -->
-        <img src="images/bloco.png" alt="Bloco A">
-        <img src="images/apartamento.png" alt="Apartamento T1">
-        <img src="images/salao.png" alt="Salão de festas">
-        <img src="images/parque.png" alt="Parque infantil">
-        <img src="images/estacionamento.png" alt="Estacionamento">
-        <img src="images/portaria.png" alt="Portaria">
-      </div>
-    </div>
-    <p>1. Administração condominial transparente com relatórios mensais e controle de despesas.</p>
-    <p>2. Segurança 24 horas com sistema de monitoramento e equipe treinada.</p>
-    <p>3. Limpeza e manutenção das áreas comuns para garantir um ambiente agradável.</p>
-    <p>4. Gestão de obras e reformas com planejamento eficiente.</p>
-    <p>5. Mediação de conflitos e comunicação clara entre moradores.</p>
-    <p>6. Suporte a eventos sociais, promovendo integração da comunidade.</p>
-    <p>7. Controle de acesso digital e cadastro de visitantes.</p>
-    <p>8. Gestão de reservas de espaços como salão de festas e churrasqueira.</p>
-    <p>9. Apoio jurídico para questões condominiais.</p>
-    <p>10. Atendimento rápido e eficiente para todas as demandas.</p>
+  <section id="servicos">
+    <h2>Serviços</h2>
+    <p>Oferecemos serviços de segurança 24h, manutenção de áreas comuns, gestão condominial e atendimento personalizado aos moradores.</p>
+    <p>Além disso, possuímos salão de festas, parque infantil, estacionamento seguro e áreas verdes planejadas para o bem-estar.</p>
+  </section>
+
+  <section id="projetos">
+    <h2>Projetos</h2>
+    <p>Nossos projetos incluem expansão de novas áreas residenciais, modernização de infraestruturas e integração de soluções sustentáveis para melhor qualidade de vida.</p>
   </section>
 
   <section id="galeria">
@@ -186,28 +148,34 @@
     <div class="galeria">
       <img src="images/bloco.png" alt="Bloco A">
       <img src="images/apartamento.png" alt="Apartamento T1">
-      <img src="images/salao.png" alt="Salão de festas">
-      <img src="images/parque.png" alt="Parque infantil">
+      <img src="images/salao.png" alt="Salão de Festas">
+      <img src="images/parque.png" alt="Parque Infantil">
       <img src="images/estacionamento.png" alt="Estacionamento">
-      <img src="images/portaria.png" alt="Portaria">
+      <img src="images/portaria.png" alt="Portaria 24h">
     </div>
   </section>
 
-  <section id="contato" class="contato">
-    <h2>Contato</h2>
-    <p>Endereço: Rua da Mozal, Condomínio Munguá, Maputo, Moçambique</p>
-    <iframe src="https://www.google.com/maps?q=Rua+da+Mozal+Maputo&output=embed"></iframe>
-    <div class="redes">
-      <a href="https://wa.me/258872351863" target="_blank">📱 WhatsApp</a>
-      <a href="https://facebook.com" target="_blank">📘 Facebook</a>
-      <a href="https://instagram.com" target="_blank">📸 Instagram</a>
-      <a href="https://twitter.com" target="_blank">🐦 Twitter</a>
-    </div>
+  <section id="equipe">
+    <h2>Equipe</h2>
+    <p>Nosso time de gestores e colaboradores está sempre pronto para garantir que o condomínio funcione de forma eficiente e organizada.</p>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Condomínio Munguá. Todos os direitos reservados.</p>
-  </footer>
+  <section id="contactos">
+    <h2>Contactos</h2>
+    <div class="contactos">
+      <p><strong>Endereço:</strong> Condomínio Munguá, Rua da Mozal, Maputo - Moçambique</p>
+      <p><strong>Telefone:</strong> +258 872351863</p>
+      <div class="social">
+        <a href="#">Whatsapp</a>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+      </div>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114402.53096775344!2d32.471!3d-25.933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee6990a2f6e6b3f%3A0xeca7985f5086d8b8!2sMozal!5e0!3m2!1spt!2smz!4v1700000000000" 
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
 
 </body>
 </html>
