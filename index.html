@@ -2,180 +2,130 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Condomínio Munguá</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mungua's Condomínio</title>
+  <link rel="stylesheet" href="css/style.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-
-    /* Cabeçalho */
-    header {
-      background: #2c3e50;
-      color: white;
-      padding: 25px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-    }
-
-    header p {
-      margin: 5px 0 0;
-    }
-
-    /* Menu de navegação */
-    nav {
-      background: white;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      padding: 15px 0;
-      position: sticky;
-      top: 70px;
-      z-index: 999;
-      border-bottom: 1px solid #ddd;
-    }
-
-    nav a {
-      color: #444;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #f1c40f;
-    }
-
-    /* Seções */
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    section h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #2c3e50;
-    }
-
-    /* Galeria simples */
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-    }
-
-    .galeria img {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-
-    /* Contactos */
-    .contactos {
-      text-align: center;
-    }
-
-    .contactos p {
-      margin: 10px 0;
-    }
-
-    .social a {
-      margin: 0 10px;
-      text-decoration: none;
-      font-size: 18px;
-      color: #2c3e50;
-      transition: color 0.3s;
-    }
-
-    .social a:hover {
-      color: #f1c40f;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #f7f7f7; color: #333; line-height: 1.6; }
+    header { background: #222; color: #fff; padding: 15px 0; position: fixed; top: 0; width: 100%; z-index: 1000; }
+    nav ul { display: flex; justify-content: center; list-style: none; }
+    nav ul li { margin: 0 20px; }
+    nav ul li a { color: #fff; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+    nav ul li a:hover { color: #ffcc00; }
+    .container { width: 90%; margin: auto; padding-top: 80px; }
+    section { padding: 50px 0; border-bottom: 1px solid #ddd; }
+    h1, h2 { text-align: center; margin-bottom: 20px; }
+    .hero { text-align: center; background: url('images/banner.png') center/cover no-repeat; color: white; padding: 100px 20px; }
+    .hero h1 { font-size: 3em; animation: brilho 2s infinite alternate; }
+    @keyframes brilho { from { text-shadow: 0 0 10px yellow; } to { text-shadow: 0 0 20px orange; } }
+    .services p, .about p { margin-bottom: 15px; text-align: justify; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+    .gallery img { width: 100%; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,0.2); }
+    footer { background: #222; color: white; text-align: center; padding: 20px; }
+    footer a { color: #ffcc00; text-decoration: none; margin: 0 10px; }
+    iframe { width: 100%; height: 300px; border: none; }
   </style>
 </head>
 <body>
 
-  <!-- Cabeçalho -->
-  <header id="inicio">
-    <h1>Condomínio Munguá</h1>
-    <p>Bem-vindo ao nosso espaço residencial</p>
-  </header>
-
-  <!-- Menu -->
+<header>
   <nav>
-    <a href="#inicio">Início</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#projetos">Projetos</a>
-    <a href="#galeria">Galeria</a>
-    <a href="#equipe">Equipe</a>
-    <a href="#contactos">Contactos</a>
+    <ul>
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#equipe">Equipe</a></li>
+      <li><a href="#contactos">Contactos</a></li>
+    </ul>
   </nav>
+</header>
 
-  <!-- Seções -->
-  <section id="sobre">
-    <h2>Sobre</h2>
-    <p>O Condomínio Munguá foi desenvolvido para proporcionar conforto, segurança e qualidade de vida aos seus moradores. Contamos com apartamentos modernos, áreas de lazer e serviços exclusivos.</p>
-    <p>Nosso objetivo é criar um ambiente familiar, tranquilo e bem estruturado, perfeito para quem busca morar com comodidade e praticidade.</p>
-  </section>
+<section id="inicio" class="hero">
+  <h1>Bem-vindo ao Mungua's Condomínio</h1>
+  <p>Gestão moderna, segura e prática para seu condomínio!</p>
+</section>
 
-  <section id="servicos">
-    <h2>Serviços</h2>
-    <p>Oferecemos serviços de segurança 24h, manutenção de áreas comuns, gestão condominial e atendimento personalizado aos moradores.</p>
-    <p>Além disso, possuímos salão de festas, parque infantil, estacionamento seguro e áreas verdes planejadas para o bem-estar.</p>
-  </section>
+<div class="container">
 
-  <section id="projetos">
-    <h2>Projetos</h2>
-    <p>Nossos projetos incluem expansão de novas áreas residenciais, modernização de infraestruturas e integração de soluções sustentáveis para melhor qualidade de vida.</p>
-  </section>
+<section id="sobre" class="about">
+  <h2>Quem Somos</h2>
+  <p>Somos uma empresa especializada em gestão de condomínios...</p>
+  <p>Com uma equipe dedicada, oferecemos soluções completas...</p>
+  <p>Nosso foco é transparência, eficiência e segurança...</p>
+  <p>Utilizamos tecnologia avançada para controlar finanças...</p>
+  <p>Atuamos com uma comunicação eficiente...</p>
+  <p>Estamos comprometidos em melhorar a experiência...</p>
+  <p>Com anos de experiência no mercado...</p>
+  <p>Nossos clientes são nossa prioridade...</p>
+  <p>Oferecemos suporte técnico especializado...</p>
+  <p>Venha conhecer nossos serviços e transforme...</p>
+</section>
 
-  <section id="galeria">
-    <h2>Galeria</h2>
-    <div class="galeria">
-      <img src="images/bloco.png" alt="Bloco A">
-      <img src="images/apartamento.png" alt="Apartamento T1">
-      <img src="images/salao.png" alt="Salão de Festas">
-      <img src="images/parque.png" alt="Parque Infantil">
-      <img src="images/estacionamento.png" alt="Estacionamento">
-      <img src="images/portaria.png" alt="Portaria 24h">
-    </div>
-  </section>
+<section id="servicos" class="services">
+  <h2>O Que Fazemos</h2>
+  <p>1. Administração completa de condomínios...</p>
+  <p>2. Gestão financeira e emissão de relatórios...</p>
+  <p>3. Controle de despesas e pagamentos...</p>
+  <p>4. Comunicação eficiente com moradores...</p>
+  <p>5. Manutenção preventiva e corretiva...</p>
+  <p>6. Gestão de segurança e portaria...</p>
+  <p>7. Apoio jurídico e consultoria...</p>
+  <p>8. Sistema online para acompanhamento...</p>
+  <p>9. Transparência em todas as operações...</p>
+  <p>10. Suporte dedicado para gestores...</p>
+</section>
 
-  <section id="equipe">
-    <h2>Equipe</h2>
-    <p>Nosso time de gestores e colaboradores está sempre pronto para garantir que o condomínio funcione de forma eficiente e organizada.</p>
-  </section>
+<section id="projetos">
+  <h2>Projetos</h2>
+  <p>Confira nossos principais empreendimentos...</p>
+</section>
 
-  <section id="contactos">
-    <h2>Contactos</h2>
-    <div class="contactos">
-      <p><strong>Endereço:</strong> Condomínio Munguá, Rua da Mozal, Maputo - Moçambique</p>
-      <p><strong>Telefone:</strong> +258 872351863</p>
-      <div class="social">
-        <a href="#">Whatsapp</a>
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
-        <a href="#">Twitter</a>
-      </div>
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114402.53096775344!2d32.471!3d-25.933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee6990a2f6e6b3f%3A0xeca7985f5086d8b8!2sMozal!5e0!3m2!1spt!2smz!4v1700000000000" 
-        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-  </section>
+<section id="galeria" class="gallery">
+  <h2>Galeria</h2>
+  <img src="images/apartamento.png" alt="Apartamento">
+  <img src="images/banheiro.png" alt="Banheiro">
+  <img src="images/bloco.png" alt="Bloco">
+  <img src="images/condominio.png" alt="Condomínio">
+  <img src="images/cozinha.png" alt="Cozinha">
+  <img src="images/despesas.png" alt="Despesas">
+  <img src="images/estacionamento.png" alt="Estacionamento">
+  <img src="images/fachada.png" alt="Fachada">
+  <img src="images/jardim.png" alt="Jardim">
+  <img src="images/logo.png" alt="Logo">
+  <img src="images/moradores.png" alt="Moradores">
+  <img src="images/pagamentos.png" alt="Pagamentos">
+  <img src="images/parque.png" alt="Parque">
+  <img src="images/planta.png" alt="Planta">
+  <img src="images/portao.png" alt="Portão">
+  <img src="images/portao2.png" alt="Portão 2">
+</section>
+
+<section id="equipe">
+  <h2>Nossa Equipe</h2>
+  <p>Equipe de profissionais capacitados e experientes...</p>
+</section>
+
+<section id="contactos">
+  <h2>Contactos</h2>
+  <p>📍 Condomínio Mozal, Rua da Mozal</p>
+  <p>📞 WhatsApp: +258 87 235 1863</p>
+  <p>📧 Email: contato@munguacondominio.com</p>
+  <p>🌐 Redes Sociais: 
+    <a href="#">Facebook</a> | 
+    <a href="#">Instagram</a> | 
+    <a href="#">Twitter</a>
+  </p>
+  <iframe src="https://www.google.com/maps?q=Condom%C3%ADnio%20Mozal%20Rua%20da%20Mozal&output=embed"></iframe>
+</section>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 Mungua's Condomínio - Todos os direitos reservados</p>
+</footer>
 
 </body>
 </html>
