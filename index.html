@@ -2,66 +2,211 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>Condomínio - Página Inicial</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Mungua's Moradia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    :root {
+      --bg: #eaf0f6;
+      --card: #ffffff;
+      --accent: #2c3e50;
+      --text: #333333;
+      --muted: #666666;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f5f5f5;
+      background: var(--bg);
+      color: var(--text);
     }
     header {
-      background: #2c3e50;
+      background: var(--accent);
       color: white;
-      padding: 15px;
+      padding: 30px;
       text-align: center;
+      box-shadow: 0 4px 6px var(--shadow);
     }
     main {
-      padding: 20px;
-      text-align: center;
+      padding: 30px;
+      max-width: 1100px;
+      margin: auto;
     }
-    h1 {
+    h1, h2 {
       margin-bottom: 10px;
     }
-    p {
+    h2 {
+      color: var(--accent);
+    }
+    p, ul {
       font-size: 18px;
+      line-height: 1.6;
+    }
+    .info-box {
+      background: var(--card);
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px var(--shadow);
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .gallery img {
+      width: 48%;
+      border-radius: 8px;
+      box-shadow: 0 0 10px var(--shadow);
+      cursor: pointer;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
     .btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #3498db;
+      padding: 12px 20px;
+      background: var(--accent);
       color: white;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 6px;
+      font-weight: bold;
       transition: background 0.3s ease;
     }
     .btn:hover {
-      background: #2980b9;
+      background: #1a2a3f;
     }
     footer {
-      margin-top: 50px;
-      text-align: center;
-      padding: 10px;
-      background: #2c3e50;
+      background: var(--accent);
       color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 50px;
     }
+
+    /* Slider */
+    .slider {
+      position: relative;
+      max-width: 100%;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 15px var(--shadow);
+      margin-top: 15px;
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .slides img {
+      width: 100%;
+      flex-shrink: 0;
+      border-radius: 10px;
+    }
+    .slider button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(44, 62, 80, 0.7);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      border-radius: 50%;
+    }
+    .slider .prev { left: 10px; }
+    .slider .next { right: 10px; }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Bem-vindo ao Condomínio</h1>
+    <h1>Mungua's Moradia</h1>
+    <p>Condomínio residencial moderno e seguro na zona da Mozal</p>
   </header>
 
   <main>
-    <p>Informações gerais do condomínio estarão disponíveis aqui.</p>
-    <p>Para acessar dados de moradores, despesas e pagamentos, utilize o botão abaixo.</p>
-    <a href="gestao.html" class="btn">Área do Gestor</a>
+    <div class="info-box">
+      <h2>📍 Localização</h2>
+      <p>Zona da Mozal, Bairro Beluluane, Ressano Garcia, Maputo</p>
+      <iframe src="https://www.google.com/maps?q=Mozal,+Maputo,+Moçambique&output=embed"></iframe>
+    </div>
+
+    <div class="info-box">
+      <h2>🔐 Segurança e Portaria</h2>
+      <p>Portão automático com controle de acesso, câmeras de vigilância e sinalização de segurança.</p>
+      <div class="slider">
+        <div class="slides">
+          <img src="images/portao1.jpg" alt="Portão com segurança">
+          <img src="images/portao2.jpg" alt="Entrada com controle de acesso">
+          <img src="images/portaria.jpg" alt="Portaria com sinalização de segurança">
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h2>🏢 Estrutura do Condomínio</h2>
+      <ul>
+        <li><a href="images/bloco.jpg" target="_blank">Blocos residenciais com 3 andares</a></li>
+        <li><a href="images/apartamento.jpg" target="_blank">48 apartamentos modernos</a></li>
+        <li><a href="images/salao.jpg" target="_blank">Salão de festas equipado</a></li>
+        <li><a href="images/parque.jpg" target="_blank">Parque infantil e área verde</a></li>
+        <li><a href="images/estacionamento.jpg" target="_blank">Estacionamento interno para moradores</a></li>
+        <li><a href="images/portaria.jpg" target="_blank">Portaria com segurança 24h</a></li>
+      </ul>
+    </div>
+
+    <div class="info-box">
+      <h2>🖼️ Galeria de Imagens</h2>
+      <div class="gallery">
+        <a href="images/fachada.jpg" target="_blank"><img src="images/fachada.jpg" alt="Fachada do condomínio"></a>
+        <a href="images/sala1.jpg" target="_blank"><img src="images/sala1.jpg" alt="Sala de estar"></a>
+        <a href="images/cozinha1.jpg" target="_blank"><img src="images/cozinha1.jpg" alt="Cozinha equipada"></a>
+        <a href="images/quarto1.jpg" target="_blank"><img src="images/quarto1.jpg" alt="Quarto de casal"></a>
+        <a href="images/banheiro1.jpg" target="_blank"><img src="images/banheiro1.jpg" alt="Banheiro moderno"></a>
+        <a href="images/jardim.jpg" target="_blank"><img src="images/jardim.jpg" alt="Área verde e jardim"></a>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h2>📞 Contato da Administração</h2>
+      <p>Gestor: Sr. Martinho Munguambe</p>
+      <p>Telefone: <a href="tel:+258841234567">+258 84 123 4567</a></p>
+      <p>Email: <a href="mailto:munguas.moradia@gmail.com">munguas.moradia@gmail.com</a></p>
+      <p>WhatsApp: <a href="https://wa.me/258841234567" target="_blank">Conversar no WhatsApp</a></p>
+    </div>
+
+    <div class="info-box">
+      <h2>🌐 Redes Sociais</h2>
+      <ul>
+        <li><a href="https://facebook.com/munguasmoradia" target="_blank">Facebook: /munguasmoradia</a></li>
+        <li><a href="https://instagram.com/munguasmoradia" target="_blank">Instagram: @munguasmoradia</a></li>
+      </ul>
+    </div>
+
+    <div class="info-box" style="text-align: center;">
+      <h2>🔐 Área do Gestor</h2>
+      <p>Para acessar dados internos como moradores, despesas e pagamentos:</p>
+      <a href="gestao.html" class="btn">Entrar como Gestor</a>
+    </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 Condomínio. Todos os direitos reservados.</p>
+    <p>&copy; 2025 Munguá's Moradia. Todos os direitos reservados.</p>
   </footer>
-</body>
-</html>
+
+  <
