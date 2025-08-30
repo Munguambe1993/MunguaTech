@@ -160,14 +160,19 @@
 
     <div class="info-box">
       <h2>🏢 Estrutura do Condomínio</h2>
-      <ul>
-        <li><a href="images/bloco.png" target="_blank">Blocos residenciais com 3 andares</a></li>
-        <li><a href="images/apartamento.png" target="_blank">48 apartamentos modernos</a></li>
-        <li><a href="images/salao.png" target="_blank">Salão de festas equipado</a></li>
-        <li><a href="images/parque.png" target="_blank">Parque infantil</a></li>
-        <li><a href="images/estacionamento.png" target="_blank">Estacionamento interno para moradores</a></li>
-        <li><a href="images/portaria.png" target="_blank">CCTV com segurança 24h</a></li>
-      </ul>
+      <p>Confira abaixo as imagens que representam a estrutura do condomínio:</p>
+      <div class="slider">
+        <div class="slides">
+          <img src="images/bloco.png" alt="Blocos residenciais com 3 andares">
+          <img src="images/apartamento.png" alt="48 apartamentos modernos">
+          <img src="images/salao.png" alt="Salão de festas equipado">
+          <img src="images/parque.png" alt="Parque infantil">
+          <img src="images/estacionamento.png" alt="Estacionamento interno">
+          <img src="images/portaria.png" alt="CCTV com segurança 24h">
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
     </div>
 
     <div class="info-box">
@@ -209,4 +214,38 @@
     <p>&copy; 2025 Munguá's Moradia. Todos os direitos reservados.</p>
   </footer>
 
-  <
+  <!-- Script para ativar múltiplos sliders -->
+  <script>
+    document.querySelectorAll('.slider').forEach(slider => {
+      const slides = slider.querySelector('.slides');
+      const images = slider.querySelectorAll('.slides img');
+      const prev = slider.querySelector('.prev');
+      const next = slider.querySelector('.next');
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        const slideWidth = images[0].clientWidth;
+        slides.style.transform = `translateX(-${index * slideWidth}px)`;
+      }
+
+      next.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showSlide(currentIndex);
+      });
+
+      prev.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showSlide(currentIndex);
+      });
+
+      window.addEventListener('load', () => {
+        showSlide(currentIndex);
+      });
+
+      window.addEventListener('resize', () => {
+        showSlide(currentIndex);
+      });
+    });
+  </script>
+</body>
+</html>
