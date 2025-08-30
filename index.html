@@ -5,97 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Condomínio Munguá</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to right, #eef2f3, #dfe9f3);
-      color: #333;
+      box-sizing: border-box;
     }
-
-    /* Cabeçalho */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f0f4f8, #d9e4f5);
+      color: #333;
+      line-height: 1.6;
+    }
     header {
-      background: rgba(44, 62, 80, 0.95);
-      color: white;
-      padding: 20px 0;
+      background: rgba(44, 62, 80, 0.9);
+      color: #fff;
+      padding: 20px;
       text-align: center;
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
-
     header h1 {
-      font-size: 2.5em;
-      margin: 0;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+      font-size: 2.5rem;
+      color: #f1c40f;
       animation: brilho 2s infinite alternate;
+      padding: 20px;
     }
-
     @keyframes brilho {
-      from { color: #fff; text-shadow: 0 0 10px #fff, 0 0 20px #ffdd57; }
-      to { color: #ffdd57; text-shadow: 0 0 20px #ffdd57, 0 0 40px #fff; }
+      0% { text-shadow: 0 0 5px #f1c40f, 0 0 10px #f39c12; }
+      100% { text-shadow: 0 0 20px #f1c40f, 0 0 30px #e67e22; }
     }
-
     nav {
-      margin-top: 10px;
+      background: #34495e;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px 0;
     }
-
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 20px;
       font-weight: bold;
       transition: color 0.3s;
     }
-
     nav a:hover {
-      color: #ffdd57;
+      color: #f1c40f;
     }
-
-    /* Sessões */
     section {
       padding: 40px 20px;
       max-width: 1200px;
       margin: auto;
     }
-
-    section h2 {
+    h2 {
       text-align: center;
-      margin-bottom: 20px;
-      font-size: 2em;
       color: #2c3e50;
+      margin-bottom: 20px;
     }
-
-    /* Slider */
+    /* Slider infinito */
     .slider {
-      position: relative;
-      max-width: 100%;
-      margin: 20px auto;
       overflow: hidden;
+      width: 100%;
+      margin: 20px auto;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      position: relative;
     }
-
     .slides {
       display: flex;
-      width: 600%;
-      animation: slide 20s infinite;
+      width: calc(100% * 12); /* duplicado para loop */
+      animation: scroll 50s linear infinite;
     }
-
     .slides img {
       width: 100%;
+      flex-shrink: 0;
       border-radius: 10px;
     }
-
-    @keyframes slide {
-      0% { transform: translateX(0%); }
-      20% { transform: translateX(-100%); }
-      40% { transform: translateX(-200%); }
-      60% { transform: translateX(-300%); }
-      80% { transform: translateX(-400%); }
-      100% { transform: translateX(-500%); }
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
-
     /* Galeria */
     .galeria {
       display: grid;
@@ -103,110 +92,122 @@
       gap: 15px;
       margin-top: 20px;
     }
-
     .galeria img {
       width: 100%;
       border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: transform 0.3s;
     }
-
     .galeria img:hover {
       transform: scale(1.05);
     }
-
-    /* Contatos */
-    .contatos {
+    /* Contato */
+    .contato {
       text-align: center;
     }
-
-    .contatos a {
-      display: inline-block;
-      margin: 10px;
-      text-decoration: none;
-      color: #2c3e50;
-      font-weight: bold;
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 20px;
     }
-
+    .redes {
+      margin-top: 20px;
+    }
+    .redes a {
+      margin: 0 10px;
+      color: #2c3e50;
+      font-size: 24px;
+      text-decoration: none;
+    }
     footer {
+      text-align: center;
+      padding: 15px;
       background: #2c3e50;
       color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 30px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Bem-vindo ao Condomínio Munguá</h1>
-    <nav>
-      <a href="#quem-somos">Quem Somos</a>
-      <a href="#oque-fazemos">O Que Fazemos</a>
-      <a href="#galeria">Galeria</a>
-      <a href="#endereco">Endereço</a>
-      <a href="#contatos">Contactos</a>
-    </nav>
+    <h1>Bem-vindo ao Munguá's Condomínio</h1>
   </header>
+  <nav>
+    <a href="#quem-somos">Quem Somos</a>
+    <a href="#o-que-fazemos">O Que Fazemos</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#contato">Contato</a>
+  </nav>
 
   <section id="quem-somos">
     <h2>Quem Somos</h2>
-    <p>Somos o Condomínio Munguá, um espaço residencial moderno, seguro e bem estruturado, localizado na região da Mozal. Nosso compromisso é oferecer conforto, qualidade de vida e uma administração eficiente para todos os nossos moradores. Trabalhamos para proporcionar um ambiente acolhedor e organizado, promovendo o bem-estar e a convivência harmoniosa entre os vizinhos.</p>
-    <p>Nosso condomínio é referência em infraestrutura, segurança e serviços, trazendo uma experiência única para quem busca morar com tranquilidade e praticidade.</p>
+    <p>O Condomínio Munguá é um espaço moderno e seguro, pensado para oferecer conforto, tranquilidade e qualidade de vida aos seus moradores. Nossa missão é proporcionar um ambiente acolhedor com infraestrutura de excelência, zelando pelo bem-estar coletivo e pela valorização do patrimônio.</p>
+    <p>Com uma equipe dedicada e serviços personalizados, estamos sempre prontos para atender às necessidades dos nossos residentes. Nosso compromisso é ser mais do que um simples condomínio; queremos construir uma comunidade unida, onde todos se sintam em casa.</p>
+    <p>Investimos constantemente em segurança, tecnologia e lazer, garantindo que cada família tenha um espaço ideal para viver com qualidade. Além disso, buscamos sempre inovação, trazendo soluções inteligentes para a gestão condominial.</p>
+    <p>Acreditamos na transparência, no diálogo e na convivência harmônica, pilares que fortalecem nossa relação com todos os moradores. Aqui, cada detalhe é pensado para você viver bem.</p>
   </section>
 
-  <section id="oque-fazemos">
+  <section id="o-que-fazemos">
     <h2>O Que Fazemos</h2>
-    <p>1. Administramos todas as áreas comuns do condomínio com eficiência, garantindo organização e bem-estar.</p>
-    <p>2. Implementamos um sistema de gestão moderna que permite acompanhar despesas, pagamentos e serviços com transparência.</p>
-    <p>3. Garantimos a segurança 24 horas por dia, com portaria equipada e monitoramento constante.</p>
-    <p>4. Mantemos áreas verdes e de lazer para promover uma vida saudável e equilibrada.</p>
-    <p>5. Realizamos manutenções periódicas para manter todas as estruturas em perfeito estado.</p>
-    <p>6. Organizamos eventos e atividades para fortalecer a convivência e o senso de comunidade.</p>
-    <p>7. Oferecemos suporte rápido para qualquer necessidade dos moradores, garantindo praticidade.</p>
-    <p>8. Desenvolvemos projetos sustentáveis, visando economia e preservação ambiental.</p>
-    <p>9. Facilitamos a comunicação entre síndico, administração e moradores com tecnologia.</p>
-    <p>10. Trabalhamos para oferecer sempre um serviço de alta qualidade, focado na satisfação dos residentes.</p>
-  </section>
-
-  <section id="galeria">
-    <h2>Galeria</h2>
     <div class="slider">
       <div class="slides">
         <img src="images/bloco.png" alt="Bloco A">
         <img src="images/apartamento.png" alt="Apartamento T1">
-        <img src="images/salao.png" alt="Salão de Festas">
-        <img src="images/parque.png" alt="Parque Infantil">
+        <img src="images/salao.png" alt="Salão de festas">
+        <img src="images/parque.png" alt="Parque infantil">
+        <img src="images/estacionamento.png" alt="Estacionamento">
+        <img src="images/portaria.png" alt="Portaria">
+        <!-- duplicado p/ loop infinito -->
+        <img src="images/bloco.png" alt="Bloco A">
+        <img src="images/apartamento.png" alt="Apartamento T1">
+        <img src="images/salao.png" alt="Salão de festas">
+        <img src="images/parque.png" alt="Parque infantil">
         <img src="images/estacionamento.png" alt="Estacionamento">
         <img src="images/portaria.png" alt="Portaria">
       </div>
     </div>
+    <p>1. Administração condominial transparente com relatórios mensais e controle de despesas.</p>
+    <p>2. Segurança 24 horas com sistema de monitoramento e equipe treinada.</p>
+    <p>3. Limpeza e manutenção das áreas comuns para garantir um ambiente agradável.</p>
+    <p>4. Gestão de obras e reformas com planejamento eficiente.</p>
+    <p>5. Mediação de conflitos e comunicação clara entre moradores.</p>
+    <p>6. Suporte a eventos sociais, promovendo integração da comunidade.</p>
+    <p>7. Controle de acesso digital e cadastro de visitantes.</p>
+    <p>8. Gestão de reservas de espaços como salão de festas e churrasqueira.</p>
+    <p>9. Apoio jurídico para questões condominiais.</p>
+    <p>10. Atendimento rápido e eficiente para todas as demandas.</p>
+  </section>
+
+  <section id="galeria">
+    <h2>Galeria</h2>
     <div class="galeria">
-      <img src="images/bloco.png" alt="Bloco">
-      <img src="images/apartamento.png" alt="Apartamento">
-      <img src="images/salao.png" alt="Salão">
-      <img src="images/parque.png" alt="Parque">
+      <img src="images/bloco.png" alt="Bloco A">
+      <img src="images/apartamento.png" alt="Apartamento T1">
+      <img src="images/salao.png" alt="Salão de festas">
+      <img src="images/parque.png" alt="Parque infantil">
+      <img src="images/estacionamento.png" alt="Estacionamento">
+      <img src="images/portaria.png" alt="Portaria">
     </div>
   </section>
 
-  <section id="endereco">
-    <h2>Endereço</h2>
-    <p>Estamos localizados na Rua da Mozal, próximo ao complexo industrial Mozal, Maputo - Moçambique.</p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22583.20464644688!2d32.519821!3d-25.947532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee8f8e6e3a3a3d3%3A0x23b4c4ef79b9a48a!2sMozal!5e0!3m2!1spt-PT!2smz!4v1689774567890!5m2!1spt-PT!2smz" 
-      width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-  </section>
-
-  <section id="contatos" class="contatos">
-    <h2>Contactos</h2>
-    <p>📞 Telefone: +258 84 123 4567</p>
-    <p>📧 Email: contato@mungua.condominio.mz</p>
-    <a href="https://wa.me/258872351863" target="_blank">💬 WhatsApp</a>
-    <a href="https://facebook.com" target="_blank">📘 Facebook</a>
-    <a href="https://instagram.com" target="_blank">📸 Instagram</a>
-    <a href="https://twitter.com" target="_blank">🐦 Twitter</a>
+  <section id="contato" class="contato">
+    <h2>Contato</h2>
+    <p>Endereço: Rua da Mozal, Condomínio Munguá, Maputo, Moçambique</p>
+    <iframe src="https://www.google.com/maps?q=Rua+da+Mozal+Maputo&output=embed"></iframe>
+    <div class="redes">
+      <a href="https://wa.me/258872351863" target="_blank">📱 WhatsApp</a>
+      <a href="https://facebook.com" target="_blank">📘 Facebook</a>
+      <a href="https://instagram.com" target="_blank">📸 Instagram</a>
+      <a href="https://twitter.com" target="_blank">🐦 Twitter</a>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Condomínio Munguá - Todos os direitos reservados.</p>
+    <p>&copy; 2025 Condomínio Munguá. Todos os direitos reservados.</p>
   </footer>
+
 </body>
 </html>
