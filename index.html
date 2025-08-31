@@ -5,41 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mungua's Condomínio</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background: #f7f7f7; color: #333; line-height: 1.6; }
-    header { background: #222; color: #fff; padding: 15px 0; position: fixed; top: 0; width: 100%; z-index: 1000; }
-    nav ul { display: flex; justify-content: center; list-style: none; }
-    nav ul li { margin: 0 20px; }
-    nav ul li a { color: #fff; text-decoration: none; font-weight: bold; transition: color 0.3s; }
-    nav ul li a:hover { color: #ffcc00; }
-    .container { width: 90%; margin: auto; padding-top: 80px; }
-    section { padding: 50px 0; border-bottom: 1px solid #ddd; }
-    h1, h2 { text-align: center; margin-bottom: 20px; }
-    .hero { text-align: center; background: url('images/banner.png') center/cover no-repeat; color: white; padding: 100px 20px; }
-    .hero h1 { font-size: 3em; animation: brilho 2s infinite alternate; }
-    @keyframes brilho { from { text-shadow: 0 0 10px yellow; } to { text-shadow: 0 0 20px orange; } }
-    .services p, .about p { margin-bottom: 15px; text-align: justify; }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
-    .gallery img { width: 100%; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,0.2); }
-    footer { background: #222; color: white; text-align: center; padding: 20px; }
-    footer a { color: #ffcc00; text-decoration: none; margin: 0 10px; }
-    iframe { width: 100%; height: 300px; border: none; }
-
-    /* Login Gestor */
-    #loginGestor, #painelGestor { max-width: 500px; margin: 20px auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    #loginGestor input, #painelGestor input, #painelGestor select { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
-    #loginGestor button, #painelGestor button { padding: 10px 15px; background: #222; color: white; border: none; border-radius: 5px; cursor: pointer; }
-    #loginGestor button:hover, #painelGestor button:hover { background: #ffcc00; color: #222; }
-
-    /* Tabela de Preços */
-    table { width: 80%; margin: 20px auto; border-collapse: collapse; }
-    th, td { border: 1px solid #ddd; padding: 10px; text-align: center; }
-    th { background: #222; color: white; }
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: Arial, sans-serif; background: #f7f7f7; color: #333; line-height: 1.6;}
+    header {background: #222; color: #fff; padding: 10px 20px; position: fixed; top: 0; width: 100%; z-index: 1000; display: flex; align-items: center; justify-content: space-between;}
+    header img {height: 60px; width: auto;}
+    nav ul {list-style: none; display: flex;}
+    nav ul li {margin: 0 15px;}
+    nav ul li a {color: #fff; text-decoration: none; font-weight: bold; transition: color 0.3s;}
+    nav ul li a:hover {color: #ffcc00;}
+    section {padding: 80px 20px 40px 20px; border-bottom: 1px solid #ddd;}
+    h1, h2 {text-align: center; margin-bottom: 20px;}
+    .gallery {display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;}
+    .gallery img {width: 100%; border-radius: 8px;}
+    footer {background: #222; color: #fff; text-align: center; padding: 15px;}
+    iframe {width: 100%; height: 300px; border: none; margin-top: 15px;}
+    .price-table {width: 100%; border-collapse: collapse; margin-top: 20px;}
+    .price-table th, .price-table td {border: 1px solid #ccc; padding: 10px; text-align: center;}
+    #gestor-panel {display: none; background: #fff; padding: 20px; border: 1px solid #ccc; margin-top: 20px;}
+    input, select, button {margin: 5px 0; padding: 10px; width: 100%;}
+    .btn {background: #222; color: white; border: none; cursor: pointer; transition: 0.3s;}
+    .btn:hover {background: #ffcc00; color: #222;}
   </style>
 </head>
 <body>
 
 <header>
+  <img src="images/logo.png" alt="Logo do Condomínio">
   <nav>
     <ul>
       <li><a href="#inicio">Início</a></li>
@@ -54,118 +45,156 @@
   </nav>
 </header>
 
-<section id="inicio" class="hero">
+<section id="inicio">
   <h1>Bem-vindo ao Mungua's Condomínio</h1>
-  <p>Gestão moderna, segura e prática para seu condomínio!</p>
+  <p>Texto introdutório do condomínio, visão geral...</p>
+  <p>Mais informações sobre qualidade de vida...</p>
+  <p>Segurança e conforto para moradores...</p>
+  <p>Localização privilegiada próximo a serviços...</p>
+  <p>Equipe preparada para atender...</p>
+  <p>Inovações tecnológicas na gestão...</p>
+  <p>Foco em sustentabilidade e meio ambiente...</p>
+  <p>Integração com a comunidade local...</p>
+  <p>Planos de crescimento futuros...</p>
+  <p>Compromisso com excelência...</p>
 </section>
 
-<div class="container">
+<section id="sobre">
+  <h2>Sobre Nós</h2>
+  <p>Nossa história começou...</p>
+  <p>Experiência consolidada...</p>
+  <p>Compromisso com transparência...</p>
+  <p>Investimentos em tecnologia...</p>
+  <p>Parcerias estratégicas...</p>
+  <p>Visão para o futuro...</p>
+  <p>Equipe treinada e motivada...</p>
+  <p>Atendimento personalizado...</p>
+  <p>Missão e valores claros...</p>
+  <p>Mais que um condomínio, uma comunidade...</p>
+</section>
 
-  <!-- SOBRE -->
-  <section id="sobre" class="about">
-    <h2>Quem Somos</h2>
-    <p>Somos uma empresa especializada em gestão de condomínios...</p>
-  </section>
+<section id="servicos">
+  <h2>Serviços</h2>
+  <p>Administração completa de condomínios...</p>
+  <p>Gestão financeira e relatórios...</p>
+  <p>Controle de pagamentos...</p>
+  <p>Comunicação eficiente com moradores...</p>
+  <p>Manutenção preventiva...</p>
+  <p>Gestão de segurança...</p>
+  <p>Consultoria jurídica...</p>
+  <p>Sistema online de gestão...</p>
+  <p>Planejamento estratégico...</p>
+  <p>Atendimento especializado...</p>
+</section>
 
-  <!-- SERVIÇOS -->
-  <section id="servicos" class="services">
-    <h2>O Que Fazemos</h2>
-    <p>Administração completa, gestão financeira, manutenção, comunicação e muito mais.</p>
-  </section>
+<section id="projetos">
+  <h2>Projetos</h2>
+  <p>Projetos realizados e planejados...</p>
+  <p>Infraestrutura moderna...</p>
+  <p>Áreas verdes preservadas...</p>
+  <p>Salões de eventos...</p>
+  <p>Espaços de lazer...</p>
+  <p>Obras em andamento...</p>
+  <p>Inovação em construção...</p>
+  <p>Design sustentável...</p>
+  <p>Prêmios e reconhecimentos...</p>
+  <p>Visão de futuro...</p>
+</section>
 
-  <!-- GALERIA -->
-  <section id="galeria" class="gallery">
-    <h2>Galeria</h2>
-    <img src="images/apartamento.png" alt="Apartamento">
-    <img src="images/banheiro.png" alt="Banheiro">
-    <img src="images/bloco.png" alt="Bloco">
-  </section>
+<section id="galeria">
+  <h2>Galeria</h2>
+  <div class="gallery">
+    <img src="images/apartamento.png" alt="">
+    <img src="images/banheiro.png" alt="">
+    <img src="images/bloco.png" alt="">
+    <img src="images/condominio.png" alt="">
+    <img src="images/cozinha.png" alt="">
+    <img src="images/fachada.png" alt="">
+  </div>
+</section>
 
-  <!-- TABELA DE PREÇOS -->
-  <section id="precos">
-    <h2>Tabela de Preços</h2>
-    <table>
-      <tr><th>Tipo</th><th>Descrição</th><th>Preço (MZN)</th></tr>
-      <tr><td>Casa VIP</td><td>Casas de alto padrão</td><td>25,000 MZN</td></tr>
-      <tr><td>Casa Normal</td><td>Casas padrão</td><td>15,000 MZN</td></tr>
-    </table>
-  </section>
+<section id="precos">
+  <h2>Preços</h2>
+  <table class="price-table">
+    <tr><th>Tipo</th><th>Preço (MZN)</th></tr>
+    <tr><td>Casa VIP</td><td>30.000</td></tr>
+    <tr><td>Casa Normal</td><td>15.000</td></tr>
+  </table>
+</section>
 
-  <!-- LOGIN GESTOR -->
-  <section id="gestor">
-    <h2>Área do Gestor</h2>
-    <div id="loginGestor">
-      <h3>Login do Gestor</h3>
-      <input type="text" id="usuario" placeholder="Usuário">
-      <input type="password" id="senha" placeholder="Senha">
-      <button onclick="login()">Entrar</button>
-    </div>
+<section id="gestor">
+  <h2>Painel do Gestor</h2>
+  <input type="text" id="username" placeholder="Usuário">
+  <input type="password" id="password" placeholder="Código">
+  <button class="btn" onclick="login()">Entrar</button>
+  <div id="gestor-panel">
+    <h3>Cadastro de Moradores</h3>
+    <input type="text" id="nomeMorador" placeholder="Nome do Morador">
+    <select id="departamento">
+      <option>Bloco A</option>
+      <option>Bloco B</option>
+      <option>VIP</option>
+    </select>
+    <select id="status">
+      <option>Pago</option>
+      <option>Pendente</option>
+    </select>
+    <button class="btn" onclick="cadastrar()">Cadastrar</button>
+    <h3>Moradores</h3>
+    <ul id="listaMoradores"></ul>
+  </div>
+</section>
 
-    <div id="painelGestor" style="display:none;">
-      <h3>Painel de Gestão</h3>
-      <input type="text" id="moradorNome" placeholder="Nome do Morador">
-      <select id="departamento">
-        <option value="Bloco A">Bloco A</option>
-        <option value="Bloco B">Bloco B</option>
-        <option value="Bloco C">Bloco C</option>
-      </select>
-      <select id="pacote">
-        <option value="VIP">VIP</option>
-        <option value="Normal">Normal</option>
-      </select>
-      <select id="pagamento">
-        <option value="Pago">Pago</option>
-        <option value="Pendente">Pendente</option>
-      </select>
-      <button onclick="registrarMorador()">Registrar Morador</button>
-      <h4>Moradores Registrados:</h4>
-      <ul id="listaMoradores"></ul>
-    </div>
-  </section>
-
-  <!-- CONTACTOS -->
-  <section id="contactos">
-    <h2>Contactos</h2>
-    <p>📍 Condomínio Mozal, Rua da Mozal</p>
-    <p>📞 WhatsApp: +258 87 235 1863</p>
-  </section>
-
-</div>
+<section id="contactos">
+  <h2>Contactos</h2>
+  <p>📍 Mercado da Mozal</p>
+  <p>📞 WhatsApp: +258 87 235 1863</p>
+  <p>📧 Email: contato@munguacondominio.com</p>
+  <p>🌐 Redes: <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+  <iframe src="https://www.google.com/maps?q=Mercado+da+Mozal&output=embed"></iframe>
+</section>
 
 <footer>
   <p>&copy; 2025 Mungua's Condomínio - Todos os direitos reservados</p>
 </footer>
 
 <script>
+  const adminUser = "gestor";
+  const adminPass = "1234";
+  const moradores = JSON.parse(localStorage.getItem("moradores")) || [];
+
   function login() {
-    let user = document.getElementById("usuario").value;
-    let pass = document.getElementById("senha").value;
-    if (user === "admin" && pass === "1234") {
-      document.getElementById("loginGestor").style.display = "none";
-      document.getElementById("painelGestor").style.display = "block";
+    const u = document.getElementById("username").value;
+    const p = document.getElementById("password").value;
+    if (u === adminUser && p === adminPass) {
+      document.getElementById("gestor-panel").style.display = "block";
     } else {
-      alert("Usuário ou senha incorretos!");
+      alert("Usuário ou código incorretos!");
     }
   }
 
-  function registrarMorador() {
-    let nome = document.getElementById("moradorNome").value;
-    let depto = document.getElementById("departamento").value;
-    let pacote = document.getElementById("pacote").value;
-    let pagamento = document.getElementById("pagamento").value;
-    let lista = document.getElementById("listaMoradores");
-
-    if(nome.trim() === "") {
-      alert("Insira o nome do morador!");
-      return;
+  function cadastrar() {
+    const nome = document.getElementById("nomeMorador").value;
+    const dept = document.getElementById("departamento").value;
+    const stat = document.getElementById("status").value;
+    if (nome) {
+      moradores.push({nome, dept, stat});
+      localStorage.setItem("moradores", JSON.stringify(moradores));
+      renderMoradores();
+      alert("Morador cadastrado!");
     }
-
-    let item = document.createElement("li");
-    item.textContent = `${nome} - ${depto} - ${pacote} - ${pagamento}`;
-    lista.appendChild(item);
-
-    document.getElementById("moradorNome").value = "";
   }
+
+  function renderMoradores() {
+    const lista = document.getElementById("listaMoradores");
+    lista.innerHTML = "";
+    moradores.forEach((m) => {
+      const li = document.createElement("li");
+      li.textContent = `${m.nome} - ${m.dept} - ${m.stat}`;
+      lista.appendChild(li);
+    });
+  }
+  renderMoradores();
 </script>
 
 </body>
