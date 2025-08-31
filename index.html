@@ -6,22 +6,69 @@
   <title>Mungua's Condomínio</title>
   <style>
     * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {font-family: Arial, sans-serif; background: #f7f7f7; color: #333; line-height: 1.6;}
-    header {background: #222; color: #fff; padding: 10px 20px; position: fixed; top: 0; width: 100%; z-index: 1000; display: flex; align-items: center; justify-content: space-between;}
-    header img {height: 60px; width: auto;}
+    body {font-family: Arial, sans-serif; color: #333; line-height: 1.6;}
+
+    /* Cabeçalho fixo */
+    header {
+      background: #222;
+      color: #fff;
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    header img {
+      height: 90px; /* Logo maior */
+      width: auto;
+    }
     nav ul {list-style: none; display: flex;}
     nav ul li {margin: 0 15px;}
-    nav ul li a {color: #fff; text-decoration: none; font-weight: bold; transition: color 0.3s;}
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
     nav ul li a:hover {color: #ffcc00;}
-    section {padding: 80px 20px 40px 20px; border-bottom: 1px solid #ddd;}
-    h1, h2 {text-align: center; margin-bottom: 20px;}
-    .gallery {display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;}
+
+    /* Seções */
+    section {
+      padding: 100px 20px 60px 20px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+    h1, h2 {margin-bottom: 20px;}
+
+    /* Fundos diferentes */
+    #inicio {background: linear-gradient(135deg, #fceabb, #f8b500);}
+    #sobre {background: linear-gradient(135deg, #dce35b, #45b649); color: #fff;}
+    #servicos {background: linear-gradient(135deg, #00c6ff, #0072ff); color: #fff;}
+    #projetos {background: linear-gradient(135deg, #ff6a00, #ee0979); color: #fff;}
+    #galeria {background: linear-gradient(135deg, #00b09b, #96c93d); color: #fff;}
+    #precos {background: linear-gradient(135deg, #ff9966, #ff5e62); color: #fff;}
+    #gestor {background: linear-gradient(135deg, #8e2de2, #4a00e0); color: #fff;}
+    #contactos {background: linear-gradient(135deg, #232526, #414345); color: #fff;}
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
     .gallery img {width: 100%; border-radius: 8px;}
-    footer {background: #222; color: #fff; text-align: center; padding: 15px;}
+
+    footer {
+      background: #222; color: #fff; text-align: center;
+      padding: 15px; margin-top: 20px;
+    }
     iframe {width: 100%; height: 300px; border: none; margin-top: 15px;}
     .price-table {width: 100%; border-collapse: collapse; margin-top: 20px;}
-    .price-table th, .price-table td {border: 1px solid #ccc; padding: 10px; text-align: center;}
-    #gestor-panel {display: none; background: #fff; padding: 20px; border: 1px solid #ccc; margin-top: 20px;}
+    .price-table th, .price-table td {border: 1px solid #ccc; padding: 10px; text-align: center; background: #fff; color: #333;}
+    #gestor-panel {display: none; background: #fff; color: #333; padding: 20px; border: 1px solid #ccc; margin-top: 20px;}
     input, select, button {margin: 5px 0; padding: 10px; width: 100%;}
     .btn {background: #222; color: white; border: none; cursor: pointer; transition: 0.3s;}
     .btn:hover {background: #ffcc00; color: #222;}
@@ -45,6 +92,7 @@
   </nav>
 </header>
 
+<!-- CONTEÚDO DAS SEÇÕES (SEM ALTERAÇÕES) -->
 <section id="inicio">
   <h1>Bem-vindo ao Mungua's Condomínio</h1>
   <p>Texto introdutório do condomínio, visão geral...</p>
