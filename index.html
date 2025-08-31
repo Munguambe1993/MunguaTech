@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mungua's Condomínio</title>
-  <link rel="stylesheet" href="css/style.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: Arial, sans-serif; background: #f7f7f7; color: #333; line-height: 1.6; }
@@ -25,6 +24,17 @@
     footer { background: #222; color: white; text-align: center; padding: 20px; }
     footer a { color: #ffcc00; text-decoration: none; margin: 0 10px; }
     iframe { width: 100%; height: 300px; border: none; }
+
+    /* Login Gestor */
+    #loginGestor, #painelGestor { max-width: 500px; margin: 20px auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    #loginGestor input, #painelGestor input, #painelGestor select { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
+    #loginGestor button, #painelGestor button { padding: 10px 15px; background: #222; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    #loginGestor button:hover, #painelGestor button:hover { background: #ffcc00; color: #222; }
+
+    /* Tabela de Preços */
+    table { width: 80%; margin: 20px auto; border-collapse: collapse; }
+    th, td { border: 1px solid #ddd; padding: 10px; text-align: center; }
+    th { background: #222; color: white; }
   </style>
 </head>
 <body>
@@ -37,7 +47,8 @@
       <li><a href="#servicos">Serviços</a></li>
       <li><a href="#projetos">Projetos</a></li>
       <li><a href="#galeria">Galeria</a></li>
-      <li><a href="#equipe">Equipe</a></li>
+      <li><a href="#precos">Preços</a></li>
+      <li><a href="#gestor">Gestor</a></li>
       <li><a href="#contactos">Contactos</a></li>
     </ul>
   </nav>
@@ -50,82 +61,112 @@
 
 <div class="container">
 
-<section id="sobre" class="about">
-  <h2>Quem Somos</h2>
-  <p>Somos uma empresa especializada em gestão de condomínios...</p>
-  <p>Com uma equipe dedicada, oferecemos soluções completas...</p>
-  <p>Nosso foco é transparência, eficiência e segurança...</p>
-  <p>Utilizamos tecnologia avançada para controlar finanças...</p>
-  <p>Atuamos com uma comunicação eficiente...</p>
-  <p>Estamos comprometidos em melhorar a experiência...</p>
-  <p>Com anos de experiência no mercado...</p>
-  <p>Nossos clientes são nossa prioridade...</p>
-  <p>Oferecemos suporte técnico especializado...</p>
-  <p>Venha conhecer nossos serviços e transforme...</p>
-</section>
+  <!-- SOBRE -->
+  <section id="sobre" class="about">
+    <h2>Quem Somos</h2>
+    <p>Somos uma empresa especializada em gestão de condomínios...</p>
+  </section>
 
-<section id="servicos" class="services">
-  <h2>O Que Fazemos</h2>
-  <p>1. Administração completa de condomínios...</p>
-  <p>2. Gestão financeira e emissão de relatórios...</p>
-  <p>3. Controle de despesas e pagamentos...</p>
-  <p>4. Comunicação eficiente com moradores...</p>
-  <p>5. Manutenção preventiva e corretiva...</p>
-  <p>6. Gestão de segurança e portaria...</p>
-  <p>7. Apoio jurídico e consultoria...</p>
-  <p>8. Sistema online para acompanhamento...</p>
-  <p>9. Transparência em todas as operações...</p>
-  <p>10. Suporte dedicado para gestores...</p>
-</section>
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="services">
+    <h2>O Que Fazemos</h2>
+    <p>Administração completa, gestão financeira, manutenção, comunicação e muito mais.</p>
+  </section>
 
-<section id="projetos">
-  <h2>Projetos</h2>
-  <p>Confira nossos principais empreendimentos...</p>
-</section>
+  <!-- GALERIA -->
+  <section id="galeria" class="gallery">
+    <h2>Galeria</h2>
+    <img src="images/apartamento.png" alt="Apartamento">
+    <img src="images/banheiro.png" alt="Banheiro">
+    <img src="images/bloco.png" alt="Bloco">
+  </section>
 
-<section id="galeria" class="gallery">
-  <h2>Galeria</h2>
-  <img src="images/apartamento.png" alt="Apartamento">
-  <img src="images/banheiro.png" alt="Banheiro">
-  <img src="images/bloco.png" alt="Bloco">
-  <img src="images/condominio.png" alt="Condomínio">
-  <img src="images/cozinha.png" alt="Cozinha">
-  <img src="images/despesas.png" alt="Despesas">
-  <img src="images/estacionamento.png" alt="Estacionamento">
-  <img src="images/fachada.png" alt="Fachada">
-  <img src="images/jardim.png" alt="Jardim">
-  <img src="images/logo.png" alt="Logo">
-  <img src="images/moradores.png" alt="Moradores">
-  <img src="images/pagamentos.png" alt="Pagamentos">
-  <img src="images/parque.png" alt="Parque">
-  <img src="images/planta.png" alt="Planta">
-  <img src="images/portao.png" alt="Portão">
-  <img src="images/portao2.png" alt="Portão 2">
-</section>
+  <!-- TABELA DE PREÇOS -->
+  <section id="precos">
+    <h2>Tabela de Preços</h2>
+    <table>
+      <tr><th>Tipo</th><th>Descrição</th><th>Preço (MZN)</th></tr>
+      <tr><td>Casa VIP</td><td>Casas de alto padrão</td><td>25,000 MZN</td></tr>
+      <tr><td>Casa Normal</td><td>Casas padrão</td><td>15,000 MZN</td></tr>
+    </table>
+  </section>
 
-<section id="equipe">
-  <h2>Nossa Equipe</h2>
-  <p>Equipe de profissionais capacitados e experientes...</p>
-</section>
+  <!-- LOGIN GESTOR -->
+  <section id="gestor">
+    <h2>Área do Gestor</h2>
+    <div id="loginGestor">
+      <h3>Login do Gestor</h3>
+      <input type="text" id="usuario" placeholder="Usuário">
+      <input type="password" id="senha" placeholder="Senha">
+      <button onclick="login()">Entrar</button>
+    </div>
 
-<section id="contactos">
-  <h2>Contactos</h2>
-  <p>📍 Condomínio Mozal, Rua da Mozal</p>
-  <p>📞 WhatsApp: +258 87 235 1863</p>
-  <p>📧 Email: contato@munguacondominio.com</p>
-  <p>🌐 Redes Sociais: 
-    <a href="#">Facebook</a> | 
-    <a href="#">Instagram</a> | 
-    <a href="#">Twitter</a>
-  </p>
-  <iframe src="https://www.google.com/maps?q=Condom%C3%ADnio%20Mozal%20Rua%20da%20Mozal&output=embed"></iframe>
-</section>
+    <div id="painelGestor" style="display:none;">
+      <h3>Painel de Gestão</h3>
+      <input type="text" id="moradorNome" placeholder="Nome do Morador">
+      <select id="departamento">
+        <option value="Bloco A">Bloco A</option>
+        <option value="Bloco B">Bloco B</option>
+        <option value="Bloco C">Bloco C</option>
+      </select>
+      <select id="pacote">
+        <option value="VIP">VIP</option>
+        <option value="Normal">Normal</option>
+      </select>
+      <select id="pagamento">
+        <option value="Pago">Pago</option>
+        <option value="Pendente">Pendente</option>
+      </select>
+      <button onclick="registrarMorador()">Registrar Morador</button>
+      <h4>Moradores Registrados:</h4>
+      <ul id="listaMoradores"></ul>
+    </div>
+  </section>
+
+  <!-- CONTACTOS -->
+  <section id="contactos">
+    <h2>Contactos</h2>
+    <p>📍 Condomínio Mozal, Rua da Mozal</p>
+    <p>📞 WhatsApp: +258 87 235 1863</p>
+  </section>
 
 </div>
 
 <footer>
   <p>&copy; 2025 Mungua's Condomínio - Todos os direitos reservados</p>
 </footer>
+
+<script>
+  function login() {
+    let user = document.getElementById("usuario").value;
+    let pass = document.getElementById("senha").value;
+    if (user === "admin" && pass === "1234") {
+      document.getElementById("loginGestor").style.display = "none";
+      document.getElementById("painelGestor").style.display = "block";
+    } else {
+      alert("Usuário ou senha incorretos!");
+    }
+  }
+
+  function registrarMorador() {
+    let nome = document.getElementById("moradorNome").value;
+    let depto = document.getElementById("departamento").value;
+    let pacote = document.getElementById("pacote").value;
+    let pagamento = document.getElementById("pagamento").value;
+    let lista = document.getElementById("listaMoradores");
+
+    if(nome.trim() === "") {
+      alert("Insira o nome do morador!");
+      return;
+    }
+
+    let item = document.createElement("li");
+    item.textContent = `${nome} - ${depto} - ${pacote} - ${pagamento}`;
+    lista.appendChild(item);
+
+    document.getElementById("moradorNome").value = "";
+  }
+</script>
 
 </body>
 </html>
